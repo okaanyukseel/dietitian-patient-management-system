@@ -19,10 +19,10 @@ except ImportError:
 #  1. AYARLAR & VERİTABANI BAĞLANTISI
 # =============================================================================
 DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': '0206',  # <-- BURAYA KENDİ MYSQL ŞİFRENİ YAZ
-    'database': 'DiyetisyenDB'
+    'host': os.getenv('DB_HOST', 'localhost'),
+    'user': os.getenv('DB_USER', 'root'),
+    'password': os.getenv('DB_PASSWORD', ''),  # Şifreyi DB_PASSWORD ortam değişkeniyle ver
+    'database': os.getenv('DB_NAME', 'DiyetisyenDB')
 }
 
 # --- Renk Paleti ---
